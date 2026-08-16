@@ -4,7 +4,7 @@
 
 **Deterministic ASC 842 measurement.** Classification, present value, ROU / liability rollforward, and an evidence pack a tester can reperform. The number never comes from a language model.
 
-This is the repo that was missing when XWELL named ASC 842 as a material weakness. It measures leases. It does not decide whether a contract is a lease — that judgment stays with the control owner.
+Built for any listed company whose lease-accounting control cannot be reperformed from the close file. It measures leases. It does not decide whether a contract is a lease — that judgment stays with the control owner.
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
