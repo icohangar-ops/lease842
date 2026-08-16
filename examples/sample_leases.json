@@ -1,0 +1,158 @@
+{
+  "leases": [
+    {
+      "lease_id": "HQ-3YR",
+      "description": "Headquarters office, 36 monthly payments of 1000, 6% IBR",
+      "annual_ibr": "0.06",
+      "payments_per_year": 12,
+      "economic_life_periods": 120,
+      "fair_value": "80000",
+      "payments": [
+        {
+          "period": 1,
+          "amount": "1000"
+        },
+        {
+          "period": 2,
+          "amount": "1000"
+        },
+        {
+          "period": 3,
+          "amount": "1000"
+        },
+        {
+          "period": 4,
+          "amount": "1000"
+        },
+        {
+          "period": 5,
+          "amount": "1000"
+        },
+        {
+          "period": 6,
+          "amount": "1000"
+        },
+        {
+          "period": 7,
+          "amount": "1000"
+        },
+        {
+          "period": 8,
+          "amount": "1000"
+        },
+        {
+          "period": 9,
+          "amount": "1000"
+        },
+        {
+          "period": 10,
+          "amount": "1000"
+        },
+        {
+          "period": 11,
+          "amount": "1000"
+        },
+        {
+          "period": 12,
+          "amount": "1000"
+        },
+        {
+          "period": 13,
+          "amount": "1000"
+        },
+        {
+          "period": 14,
+          "amount": "1000"
+        },
+        {
+          "period": 15,
+          "amount": "1000"
+        },
+        {
+          "period": 16,
+          "amount": "1000"
+        },
+        {
+          "period": 17,
+          "amount": "1000"
+        },
+        {
+          "period": 18,
+          "amount": "1000"
+        },
+        {
+          "period": 19,
+          "amount": "1000"
+        },
+        {
+          "period": 20,
+          "amount": "1000"
+        },
+        {
+          "period": 21,
+          "amount": "1000"
+        },
+        {
+          "period": 22,
+          "amount": "1000"
+        },
+        {
+          "period": 23,
+          "amount": "1000"
+        },
+        {
+          "period": 24,
+          "amount": "1000"
+        },
+        {
+          "period": 25,
+          "amount": "1000"
+        },
+        {
+          "period": 26,
+          "amount": "1000"
+        },
+        {
+          "period": 27,
+          "amount": "1000"
+        },
+        {
+          "period": 28,
+          "amount": "1000"
+        },
+        {
+          "period": 29,
+          "amount": "1000"
+        },
+        {
+          "period": 30,
+          "amount": "1000"
+        },
+        {
+          "period": 31,
+          "amount": "1000"
+        },
+        {
+          "period": 32,
+          "amount": "1000"
+        },
+        {
+          "period": 33,
+          "amount": "1000"
+        },
+        {
+          "period": 34,
+          "amount": "1000"
+        },
+        {
+          "period": 35,
+          "amount": "1000"
+        },
+        {
+          "period": 36,
+          "amount": "1000"
+        }
+      ]
+    }
+  ]
+}
