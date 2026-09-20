@@ -1,0 +1,102 @@
+{
+  "title": "lease842",
+  "tables": [
+    {
+      "id": 0,
+      "name": "lease",
+      "x": 80,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "lease_id", "type": "TEXT", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 1, "name": "lessee_name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 2, "name": "asset_description", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "commencement_date", "type": "DATE", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "term_months", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "payments_per_year", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "annual_ibr", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "lease_payment", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 8, "name": "residual_value_guarantee", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 9, "name": "purchase_option_reasonably_certain", "type": "BOOLEAN", "default": false, "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 10, "name": "transfers_ownership", "type": "BOOLEAN", "default": false, "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 11, "name": "specialized_asset_no_alternative_use", "type": "BOOLEAN", "default": false, "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 12, "name": "initial_direct_costs", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 13, "name": "incentives", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 14, "name": "prepaid_or_accrued", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#7d9dff"
+    },
+    {
+      "id": 1,
+      "name": "payment",
+      "x": 420,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "lease_id", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "period", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "payment_date", "type": "DATE", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "amount", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "principal", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "interest", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "balance", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ffe159"
+    },
+    {
+      "id": 2,
+      "name": "period_row",
+      "x": 760,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "lease_id", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "period", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "opening_liability", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "interest_expense", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "cash_payment", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "principal_reduction", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "closing_liability", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 8, "name": "opening_rou", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 9, "name": "amortization", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 10, "name": "closing_rou", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 11, "name": "total_expense", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#9be7a2"
+    },
+    {
+      "id": 3,
+      "name": "lease_result",
+      "x": 1100,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "lease_id", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "classification", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "is_finance", "type": "BOOLEAN", "default": false, "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "initial_liability", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "initial_rou", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "discount_rate", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "notes", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ffaf7d"
+    }
+  ],
+  "relationships": [
+    {"startTableId": 1, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "payment_lease_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 0},
+    {"startTableId": 2, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "period_row_lease_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 1},
+    {"startTableId": 3, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "lease_result_lease_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 2}
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "types": [],
+  "enums": [],
+  "views": []
+}
