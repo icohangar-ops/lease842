@@ -45,3 +45,13 @@ Operating leases take a single straight-line expense; the ROU plug is interest m
 ## Compliance spine
 
 Every pack is sealed by a vendored copy of `control-spine` (canonical source: the `control-spine` repo). Unsigned output is `EXPLORING` and is **not evidence**. A named owner who is not the engine, plus a non-empty population and committed foundation assumptions, reaches `LOCKED`. The engine cannot countersign itself. SHA-256 of the inputs and of the spine envelope travel with the pack.
+
+## MCP server
+
+`src/lease842/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `measure_lease` and `lease_evidence_pack` — call `lease842.engine` and `lease842.evidence` verbatim. All classification and measurement logic lives in the engine module; the wrapper adds no logic, touches no network, and makes no lease-judgment calls a human owns.
+
+```bash
+uvx --from lease842 lease842-mcp
+# or from a checkout:
+python -m lease842.mcp_server
+```
