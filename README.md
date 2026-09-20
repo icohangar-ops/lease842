@@ -45,3 +45,15 @@ Operating leases take a single straight-line expense; the ROU plug is interest m
 ## Compliance spine
 
 Every pack is sealed by a vendored copy of `control-spine` (canonical source: the `control-spine` repo). Unsigned output is `EXPLORING` and is **not evidence**. A named owner who is not the engine, plus a non-empty population and committed foundation assumptions, reaches `LOCKED`. The engine cannot countersign itself. SHA-256 of the inputs and of the spine envelope travel with the pack.
+
+## MCP server
+
+`src/lease842/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.icohangar-ops/lease842` namespace (stdio transport) whose tools — `measure_lease` and `lease_evidence_pack` — call `lease842.engine` and `lease842.evidence` verbatim. All classification and measurement logic lives in the engine module; the wrapper adds no logic, touches no network, and makes no lease-judgment calls a human owns. Evidence packs built through MCP are always unsigned — the tool takes no owner, so the spine renders `EXPLORING` and `is_evidence: false`; a named human signs via the CLI (`--owner`), never through MCP.
+
+MCP access is opt-in, keeping the deterministic core zero-dependency: the engine and CLI install with no runtime dependencies, and the MCP server ships behind the `mcp` extra (`pip install 'lease842[mcp]'`) — chosen over a hard dependency after prelint review, since a default install must stay dependency-free. CI installs `.[dev,mcp]` so the MCP tests still run.
+
+```bash
+uvx --from 'lease842[mcp]' lease842-mcp
+# or from a checkout:
+uv run --with 'mcp>=1.2,<2' --with . python -m lease842.mcp_server
+```

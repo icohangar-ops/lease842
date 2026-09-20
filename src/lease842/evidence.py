@@ -18,7 +18,7 @@ ENGINE_ID = "lease842-engine"
 ENGINE_VERSION = "0.1.0"
 
 
-def evidence_pack(results: list[LeaseResult], period_label: str, owner: str) -> dict:
+def evidence_pack(results: list[LeaseResult], period_label: str, owner: str, invoked_via: str | None = None) -> dict:
     population = len(results)
     finance = sum(1 for r in results if r.classification.value == "finance")
     operating = sum(1 for r in results if r.classification.value == "operating")
@@ -55,6 +55,8 @@ def evidence_pack(results: list[LeaseResult], period_label: str, owner: str) -> 
         "owner_signoff": owner,
         "conclusion": "Population measured. Owner must confirm completeness against the contract repository before this pack is evidence.",
     }
+    if invoked_via is not None:
+        pack["invoked_via"] = invoked_via
     return seal(
         pack,
         engine_id=ENGINE_ID,
