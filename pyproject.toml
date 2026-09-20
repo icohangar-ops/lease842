@@ -17,14 +17,11 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
 ]
-# Deliberate hard dependency (overriding the pre-row-16 zero-dependency
-# design): an optional [mcp] extra would ship a server that cannot start
-# from a default install, breaking the six-engine publishing convention.
-# Documented in README "MCP server".
-dependencies = ["mcp>=1.2,<2"]
+dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+mcp = ["mcp>=1.2,<2"]
 
 [project.scripts]
 lease842 = "lease842.cli:main"
