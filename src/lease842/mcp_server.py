@@ -106,7 +106,6 @@ def measure_lease(lease: dict[str, Any]) -> dict[str, Any]:
 def lease_evidence_pack(
     leases: list[dict[str, Any]],
     period_label: str = "current",
-    owner: str = "",
 ) -> dict[str, Any]:
     """Build the evidence pack a tester can reperform without the source code.
 
@@ -116,11 +115,15 @@ def lease_evidence_pack(
     Args:
         leases: Lease terms, same shape as measure_lease's input.
         period_label: Close period label (e.g. "H1 2026").
-        owner: Named owner for sign-off. Must not be the engine.
+        Sign-off: MCP never accepts an owner — packs built here are always
+        unsigned (EXPLORING, not evidence). A named human signs via the CLI
+        (--owner), never through MCP.
     """
     parsed = [_lease_from_dict(item) for item in leases]
     results = [rollforward(lease) for lease in parsed]
-    return _jsonify(evidence_pack(results, period_label, owner))
+    pack = evidence_pack(results, period_label, owner="")
+    pack["invoked_via"] = "mcp"
+    return _jsonify(pack)
 
 
 def main() -> None:

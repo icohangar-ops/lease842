@@ -42,5 +42,8 @@ def test_measure_lease_pins_the_readme_number() -> None:
 
 
 def test_evidence_pack_totals_population() -> None:
-    pack = mcp_server.lease_evidence_pack([_office()], period_label="H1 2026", owner="Controller")
+    pack = mcp_server.lease_evidence_pack([_office()], period_label="H1 2026")
     assert pack["population_count"] == 1
+    assert pack["lock_state"] == "EXPLORING"
+    assert pack["is_evidence"] is False
+    assert pack["invoked_via"] == "mcp"
