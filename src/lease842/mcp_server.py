@@ -11,9 +11,9 @@ via the ``mcp-publisher`` CLI.
 
 Run it:
 
-    uvx --from lease842 lease842-mcp
+    uvx --from 'lease842[mcp]' lease842-mcp
     # or, from a checkout:
-    python -m lease842.mcp_server
+    uv run --with 'mcp>=1.2,<2' --with . python -m lease842.mcp_server
 """
 
 from __future__ import annotations
