@@ -6,7 +6,7 @@ tools. Thin wrapper — all measurement logic lives in ``lease842.engine`` and
 network, and no lease classification judgment is made by a model.
 
 Follows the same publishing path proven by invoice-audit-engine /
-codesentinel: namespace ``io.github.Cubiczan``, stdio transport, published
+codesentinel: namespace ``io.github.icohangar-ops/lease842``, stdio transport, published
 via the ``mcp-publisher`` CLI.
 
 Run it:
