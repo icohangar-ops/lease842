@@ -55,5 +55,5 @@ MCP access is opt-in, keeping the deterministic core zero-dependency: the engine
 ```bash
 uvx --from 'lease842[mcp]' lease842-mcp
 # or from a checkout:
-uv run --with 'mcp<2' --with . python -m lease842.mcp_server
+uv run --with 'mcp>=1.2,<2' --with . python -m lease842.mcp_server
 ```

@@ -121,8 +121,7 @@ def lease_evidence_pack(
     """
     parsed = [_lease_from_dict(item) for item in leases]
     results = [rollforward(lease) for lease in parsed]
-    pack = evidence_pack(results, period_label, owner="")
-    pack["invoked_via"] = "mcp"
+    pack = evidence_pack(results, period_label, owner="", invoked_via="mcp")
     return _jsonify(pack)
 
 
